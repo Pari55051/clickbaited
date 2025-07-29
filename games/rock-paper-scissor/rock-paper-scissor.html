@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors | ClickBaited</title>
+    <link rel="stylesheet" href="rock-paper-scissor.css">
+</head>
+
+<body>
+
+    <div class="game-section">
+        <div class="top-section">
+            <img class="logo" src="./images/logo.svg" alt="logo">
+            <div class="score-box">
+                <p id="score-label">score</p>
+                <p id="score-value"></p>
+            </div>
+
+            <div id="triangle">
+                <div id="rock" class="circle small rock">
+                    <div class="symbol"></div>
+                </div>
+                <div id="paper" class="circle small paper">
+                    <div class="symbol"></div>
+                </div>
+                <div id="scissors" class="circle small scissors">
+                    <div class="symbol"></div>
+                </div>
+            </div>
+
+            <div id="player-pick-container">
+                <p class="player-picked-text">you picked:</p>
+                <div id="player-selection" class="circle large">
+                    <div class="symbol"></div>
+                </div>
+            </div>
+
+            <div id="house-pick-container">
+                <p class="house-picked-text">the house picked:</p>
+                <div id="placeholder"></div>
+                <div id="house-selection" class="circle large">
+                    <div class="symbol"></div>
+                </div>
+            </div>
+
+            <p id="win-text">you win</p>
+            <p id="lose-text">you lose</p>
+            <p id="draw-text">draw</p>
+
+            <div id="play-again-button">
+                <p class="play-again-text">play again</p>
+            </div>
+        </div>
+
+        <div id="rules-bottom" class="button">
+            <p class="button-text">rules</p>
+        </div>
+
+        <div id="rules-model" class="model">
+            <div class="model-content">
+                <p id="rules-title">rules</p>
+                <img id="rules-image" src="./images/image-rules.svg" alt="rules">
+                <img id="close-icon" src="./images/icon-close.svg" alt="close">
+            </div>
+        </div>
+
+        <div id="reset-button" class="button">
+            <p class="button-text">reset</p>
+        </div>
+    </div>
+
+    <script src="rock-paper-scissor.js"></script>
+</body>
+
+</html>
