@@ -4,70 +4,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors | ClickBaited</title>
+    <title>Professional Rock-Paper-Scissors | Learn with Arshyan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="rock-paper-scissor.css">
 </head>
 
 <body>
+    <div class="decoration dec-1"></div>
+    <div class="decoration dec-2"></div>
 
-    <div class="game-section">
-        <div class="top-section">
-            <img class="logo" src="./images/logo.svg" alt="logo">
+    <div class="container">
+        <header>
+            <h1>rock <span class="brand">paper</span> scissors</h1>
+        </header>
+
+        <div class="scores">
             <div class="score-box">
-                <p id="score-label">score</p>
-                <p id="score-value"></p>
+                <h3>player</h3>
+                <p id="player-score">0</p>
             </div>
-
-            <div id="triangle">
-                <div id="rock" class="circle small rock">
-                    <div class="symbol"></div>
-                </div>
-                <div id="paper" class="circle small paper">
-                    <div class="symbol"></div>
-                </div>
-                <div id="scissors" class="circle small scissors">
-                    <div class="symbol"></div>
-                </div>
+            <div class="score-box">
+                <h3>rounds</h3>
+                <p id="rounds">0</p>
             </div>
-
-            <div id="player-pick-container">
-                <p class="player-picked-text">you picked:</p>
-                <div id="player-selection" class="circle large">
-                    <div class="symbol"></div>
-                </div>
-            </div>
-
-            <div id="house-pick-container">
-                <p class="house-picked-text">the house picked:</p>
-                <div id="placeholder"></div>
-                <div id="house-selection" class="circle large">
-                    <div class="symbol"></div>
-                </div>
-            </div>
-
-            <p id="win-text">you win</p>
-            <p id="lose-text">you lose</p>
-            <p id="draw-text">draw</p>
-
-            <div id="play-again-button">
-                <p class="play-again-text">play again</p>
+            <div class="score-box">
+                <h3>computer</h3>
+                <p id="computer-score">0</p>
             </div>
         </div>
 
-        <div id="rules-bottom" class="button">
-            <p class="button-text">rules</p>
-        </div>
-
-        <div id="rules-model" class="model">
-            <div class="model-content">
-                <p id="rules-title">rules</p>
-                <img id="rules-image" src="./images/image-rules.svg" alt="rules">
-                <img id="close-icon" src="./images/icon-close.svg" alt="close">
+        <div class="choices">
+            <div class="choice" id="rock" data-choice="rock">
+                <i class="fa-solid fa-hand-back-fist"></i>
+            </div>
+            <div class="choice" id="paper" data-choice="paper">
+                <i class="fa-solid fa-hand"></i>
+            </div>
+            <div class="choice" id="scissors" data-choice="scissors">
+                <i class="fa-solid fa-hand-scissors"></i>
             </div>
         </div>
 
-        <div id="reset-button" class="button">
-            <p class="button-text">reset</p>
+        <div class="result-area">
+            <div class="player-choice">
+                <i class="fa-solid fa-question"></i>
+            </div>
+            <div class="vs">vs</div>
+            <div class="computer-choice">
+                <i class="fa-solid fa-question"></i>
+            </div>
+        </div>
+
+        <div class="result-text">Select your move to begin</div>
+
+        <button class="action-btn" id="reset-btn">
+            <i class="fas fa-sync-alt"></i> reset game
+        </button>
+
+        <button class="rules-btn" id="rules-btn">
+            <i class="fa-solid fa-book"></i> Rules
+        </button>
+        <div class="overlay" id="rules-overlay">
+            <div class="rules">
+                <h3>game rules</h3>
+                <ul>
+                    <li><strong>rock</strong> defeats <strong>scissors</strong> (rock crushes scissors)</li>
+                    <li><strong>paper</strong> defeats <strong>rock</strong> (paper covers rock)</li>
+                    <li><strong>scissors</strong> defeats <strong>paper</strong> (scissors cut paper)</li>
+                    <li>Identical selections result in a <strong>draw</strong></li>
+                </ul>
+                <button class="close-btn" id="close-rules">
+                    <i class="fa-solid fa-xmark"></i> Close
+                </button>
+            </div>
+        </div>
+
+        <button class="history-btn" id="history-btn">
+            <i class="fa-solid fa-clock-rotate-left"></i> Game History
+        </button>
+        <div class="overlay" id="history-overlay">
+            <div class="history">
+                <h3>game history</h3>
+                <div id="history-list">No moves recorded yet</div>
+                <button class="close-btn" id="close-history">
+                    <i class="fa-solid fa-xmark"></i> Close
+                </button>
+            </div>
         </div>
     </div>
 
