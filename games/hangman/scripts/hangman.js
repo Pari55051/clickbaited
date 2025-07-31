@@ -12,7 +12,6 @@ const maxGuesses = 6
 let gameEnded = false
 
 const resetGame = () => {
-    // Resetting all game variables and UI elements
     correctLetters = []
     wrongGuessCount = 0
     gameEnded = false
@@ -24,7 +23,6 @@ const resetGame = () => {
 }
 
 const getRandomWord = () => {
-    // Selecting random word and hint from the wordList
     const { word, hint } = wordList[Math.floor(Math.random() * wordList.length)]
     currentWord = word
     document.querySelector(".hint-text b").innerText = hint
@@ -35,8 +33,8 @@ const gameOver = (isVictory) => {
     gameEnded = true
     setTimeout(() => {
         const modalText = isVictory ? `You found the correct word:` : `The correct word was:`
-        gameModal.querySelector("img").src = `./images/${isVictory ? 'victory' : 'lost'}.gif`
-        gameModal.querySelector("h4").innerText = `${isVictory ? 'Congrats!' : 'Game Over!'}`
+        gameModal.querySelector("img").src = `./images/${isVictory ? "victory" : "lost"}.gif`
+        gameModal.querySelector("h4").innerText = `${isVictory ? "Congrats!" : "Game Over!"}`
         gameModal.querySelector("p").innerHTML = `${modalText} <b> ${currentWord} </b>`
         gameModal.classList.add("show")
     }, 300)
@@ -44,9 +42,7 @@ const gameOver = (isVictory) => {
 }
 
 const initGame = (button, clickedLetter) => {
-    // Checking if clickedLetter exist on the currentWord
     if (currentWord.includes(clickedLetter)) {
-        // Showing all correct letters on the wordDisplay
         [...currentWord].forEach((letter, index) => {
             if (letter === clickedLetter) {
                 correctLetters.push(letter)
@@ -55,7 +51,6 @@ const initGame = (button, clickedLetter) => {
             }
         })
     } else {
-        // If clicked letter does not exist then update wrongGuessCount and hangmanImg
         wrongGuessCount++
         hangmanImg.src = `./images/hangman-${wrongGuessCount}.svg`
     }
@@ -63,12 +58,10 @@ const initGame = (button, clickedLetter) => {
     button.disabled = true
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`
 
-    // Calling gameOver function if any of these conditions meet
     if (wrongGuessCount === maxGuesses) return gameOver(false)
     if (correctLetters.length === currentWord.length) return gameOver(true)
 }
 
-// Creating the keyboard buttons
 for (let i = 97; i <= 122; i++) {
     const button = document.createElement("button")
     button.classList.add("inpBtn")
@@ -77,7 +70,7 @@ for (let i = 97; i <= 122; i++) {
     button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)))
 }
 
-const inpBtns = document.querySelectorAll('.inpBtn')
+const inpBtns = document.querySelectorAll(".inpBtn")
 console.log(inpBtns)
 
 document.addEventListener("keypress", e => {

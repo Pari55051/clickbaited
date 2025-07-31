@@ -26,7 +26,7 @@ const handleGameOver = () => {
 }
 
 const changeDirection = e => {
-    const snakeHead = document.querySelector('.snake-head')
+    const snakeHead = document.querySelector(".snake-head")
 
     if (e.key === "ArrowUp" && velocityY != 1) {
         velocityX = 0
