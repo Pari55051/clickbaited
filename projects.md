@@ -6,8 +6,8 @@
 - [x] 2048
 - [x] Memory game
 - [x] Word scramble game
-- [-] Tic tac toe
-- [-] Dino run
+- [x] Tic tac toe
+- [x] Dino run
 - [-] Pong game
 - [-] Brick breaker
 - [-] Mine sweeper
