@@ -8,13 +8,14 @@
 - [x] Word scramble game
 - [x] Tic tac toe
 - [x] Dino run
-- [-] Pong game
+- [x] Pong game
 - [-] Brick breaker
 - [-] Mine sweeper
 - [-] Wordle
 - [-] Sudoku
 - [-] Connect 4
 - [-] Puzzle game /slide puzzle
+- [-] Stick Hero
 
 ## Casino
 - [-] BlackJack

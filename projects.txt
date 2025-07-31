@@ -3,7 +3,6 @@ Snake game
 Rock Paper Scissor
 2048
 Memory game
-Word guessing game
 Word scramble game
 Tic tac toe
 Dino run
