@@ -9,7 +9,7 @@
 - [x] Tic tac toe
 - [x] Dino run
 - [x] Pong game
-- [-] Brick breaker
+- [x] Brick breaker
 - [-] Mine sweeper
 - [-] Wordle
 - [-] Sudoku

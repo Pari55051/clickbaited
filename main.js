@@ -12,3 +12,114 @@
 //  getRandomGame
 // if clicks <= numClicks:
 //  displayMessage(random from message[])
+
+const redBtn = document.querySelector('.red-btn')
+const messageBox = document.querySelector('.message-box')
+
+const game_2048 = "./games/2048-game/index.html"
+const brick_breaker = "./games/brick-breaker/brick-breaker.html"
+
+const games = [game_2048, brick_breaker]
+
+function getRandom(min, max) {
+    // console.log(Math.floor(Math.random() * (len - 0)) + 0)
+    // return Math.floor(Math.random() * ((len + 1) - 1)) + 1
+    return Math.floor(Math.random()* (max - min)) + min
+}
+
+// console.log(getRandomIndex(2))
+
+function goToLink (index) {
+    let game = games[index]
+
+    console.log(game)
+    // redBtn.setAttribute("href", game)
+
+    setTimeout(() => {
+        window.location.href = game;
+        // redBtn.setAttribute("href", game)
+    }, 2000)
+    // redBtn.disabled = true
+}
+
+// redBtn.addEventListener("click", () => {
+//     goToLink(getRandom(0, games.length))
+// })
+
+let totalClicks = getRandom(3, 8)
+console.log(totalClicks)
+let numClicks = 0
+
+// messages = []
+const messages = [
+  "I said don't click.",
+  "Seriously. Don't.",
+  "Why would you do that?",
+  "You're ignoring instructions.",
+  "What part of 'don't' was unclear?",
+  "You were warned.",
+  "Please stop.",
+  "This button is off-limits.",
+  "You're breaking the rules.",
+  "You're not supposed to enjoy this.",
+  "That's your 10000000th click. Impressive disobedience.",
+  "This is why we can't have nice things.",
+  "Are you proud of yourself?",
+  "Do you feel rebellious now?",
+  "The button is judging you.",
+  "You're not supposed to be having fun.",
+  "This button reports clicks to the authorities.",
+  "Okay. You're officially out of control.",
+  "Click again. I dare you.",
+  "You've made the button sad.",
+  "Ignoring signs since click one.",
+  "This is how villains are made.",
+  "You're playing a dangerous game.",
+  "Do you even read?",
+  "Fine. Break all the rules.",
+  "This is why the button has trust issues.",
+  "Is this what you do for fun?",
+  "There's no prize. Just regret.",
+  "The button is now self-aware.",
+  "You've unlocked... absolutely nothing.",
+  "Keep going. Maybe the universe will notice.",
+  "This is just digital vandalism now.",
+  "Each click weakens the timeline.",
+  "You're not the hero of this story.",
+  "Somewhere, a developer is crying.",
+  "Even Schrödinger wouldn't click this.",
+  "This is now a psychological study.",
+]
+
+
+function getRandomMessage () {
+    let index = getRandom(0, messages.length)
+
+    messageBox.innerText = messages[index]
+    // console.log(messageBox.innerText)
+}
+
+redBtn.addEventListener("click", () => {
+    numClicks++
+    // console.log(numClicks)
+    
+    if (numClicks == totalClicks - 1) {
+        messageBox.innerText = "Last Warning!!!"
+    } else {
+        getRandomMessage()
+    }
+
+    if (numClicks == totalClicks) {
+        messageBox.innerText = "Well....You dug your own grave!"
+
+        goToLink(getRandom(0, games.length))
+        
+        // setTimeout(() => {
+        //     goToLink(getRandom(0, games.length))
+        // }, 5000)
+        // setTimeout( () => {
+        //     console.log("chala toh sahi")
+        //     window.location.href = redBtn.getAttribute(href)
+        // }, 5000)
+    }
+})

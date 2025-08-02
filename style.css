@@ -7,12 +7,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-family: 'Roboto Mono', monospace;
     user-select: none;
     perspective: 800px;
 }
 
-.button-3d {
+a {
+    text-decoration: none;
+}
+
+.red-btn {
     width: 500px;
     height: 500px;
     text-align: center;
@@ -31,9 +36,12 @@ body {
     user-select: none;
     position: relative;
     transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+    /* outline: 0; */
+    border: none;
+    font-family: 'Roboto Mono', monospace;
 }
 
-.button-3d::before {
+.red-btn::before {
     content: "";
     position: absolute;
     top: 10%;
@@ -46,8 +54,16 @@ body {
     z-index: 1;
 }
 
-.button-3d:active {
+.red-btn:active {
     transform: translateY(15px);
     box-shadow: inset -12px -12px 25px rgba(255, 70, 70, 0.5), inset 8px 8px 20px rgba(70, 0, 0, 0.7), 0 10px 25px rgba(0, 0, 0, 0.7);
     color: rgba(241, 229, 229, 0.75);
+    /* outline: 0; */
+}
+
+
+.message-box {
+    color: #efefef;
+    margin-top: 2rem;
+    font-size: 1.3rem;
 }
