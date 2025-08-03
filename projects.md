@@ -14,9 +14,5 @@
 - [-] Wordle
 - [-] Sudoku
 - [-] Connect 4
-- [-] Puzzle game /slide puzzle
+- [-] Puzzle game / slide puzzle
 - [-] Stick Hero
-
-## Casino
-- [-] BlackJack
-- [-] Poker

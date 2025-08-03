@@ -18,28 +18,44 @@ const messageBox = document.querySelector('.message-box')
 
 const game_2048 = "./games/2048-game/index.html"
 const brick_breaker = "./games/brick-breaker/brick-breaker.html"
+const dino_run = "./games/dino-run/dino.html"
+const hangman = "./games/hangman/hangman.html"
+const memory_game = "./games/memory-game/memory.html"
+const pong_game = "./games/pong-game/pong.html"
+const rock_paper_scissor = "./games/rock-paper-scissor/rock-paper-scissor.html"
+const snake_game = "./games/snake-game/snake.html"
+const tic_tac_toe = "./games/tic-tac-toe/tic-tac-toe.html"
+const word_scramble = "./games/word-scramble/word-scramble.html"
 
-const games = [game_2048, brick_breaker]
+const games = [game_2048, brick_breaker, dino_run, hangman, memory_game, pong_game, rock_paper_scissor, snake_game, tic_tac_toe, word_scramble]
 
 function getRandom(min, max) {
     // console.log(Math.floor(Math.random() * (len - 0)) + 0)
-    // return Math.floor(Math.random() * ((len + 1) - 1)) + 1
     return Math.floor(Math.random()* (max - min)) + min
 }
 
-// console.log(getRandomIndex(2))
 
 function goToLink (index) {
     let game = games[index]
 
-    console.log(game)
+    // console.log(game)
     // redBtn.setAttribute("href", game)
 
     setTimeout(() => {
         window.location.href = game;
         // redBtn.setAttribute("href", game)
-    }, 2000)
+    }, 1600)
     // redBtn.disabled = true
+}
+
+function toggleButton () {
+    if (redBtn.style.pointerEvents != 'none') {
+        redBtn.style.pointerEvents = 'none'
+        redBtn.style.cursor = 'not-allowed'
+    } else if (redBtn.style.pointerEvents == 'none') {
+        redBtn.style.pointerEvents = 'auto'
+        redBtn.style.cursor = 'pointer'
+    }
 }
 
 // redBtn.addEventListener("click", () => {
@@ -47,7 +63,9 @@ function goToLink (index) {
 // })
 
 let totalClicks = getRandom(3, 8)
-console.log(totalClicks)
+
+// console.log(totalClicks)
+
 let numClicks = 0
 
 // messages = []
@@ -99,6 +117,8 @@ function getRandomMessage () {
     // console.log(messageBox.innerText)
 }
 
+// toggleButton()
+
 redBtn.addEventListener("click", () => {
     numClicks++
     // console.log(numClicks)
@@ -111,6 +131,11 @@ redBtn.addEventListener("click", () => {
 
     if (numClicks == totalClicks) {
         messageBox.innerText = "Well....You dug your own grave!"
+        // redBtn.disabled = true
+        // toggleButton()
+
+        redBtn.style.pointerEvents = 'none'
+        document.body.style.cursor = "wait"
 
         goToLink(getRandom(0, games.length))
         
