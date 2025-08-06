@@ -3,9 +3,9 @@ let boardWidth = 500
 let boardHeight = 500
 let context
 
-let playerWidth = 80
+let playerWidth = 100
 let playerHeight = 10
-let playerVelocityX = 10
+let playerVelocityX = 15
 
 let player = {
     x: boardWidth / 2 - playerWidth / 2,
@@ -41,15 +41,16 @@ let blockX = 15
 let blockY = 45
 
 let score = 0
-let gameOver = false
+let gameOver = true
+const startText = document.getElementById("start-text")
 
 window.onload = function () {
     board = document.getElementById("board")
     board.height = boardHeight
     board.width = boardWidth
     context = board.getContext("2d")
-
-    context.fillStyle = "skyblue"
+    
+    context.fillStyle = "#7cfbff"
     context.fillRect(player.x, player.y, player.width, player.height)
 
     requestAnimationFrame(update)
@@ -64,22 +65,22 @@ function update() {
         return
     }
     context.clearRect(0, 0, board.width, board.height)
-
-    context.fillStyle = "lightgreen"
+    
+    context.fillStyle = "#2fffaf"
     context.fillRect(player.x, player.y, player.width, player.height)
-
-    context.fillStyle = "white"
+    
+    context.fillStyle = "#ffffff"
     ball.x += ball.velocityX
     ball.y += ball.velocityY
     context.fillRect(ball.x, ball.y, ball.width, ball.height)
-
+    
     if (topCollision(ball, player) || bottomCollision(ball, player)) {
         ball.velocityY *= -1
     }
     else if (leftCollision(ball, player) || rightCollision(ball, player)) {
         ball.velocityX *= -1
     }
-
+    
     if (ball.y <= 0) {
         ball.velocityY *= -1
     }
@@ -91,8 +92,8 @@ function update() {
         context.fillText("Game Over: Press 'Space' to Restart", 80, 400)
         gameOver = true
     }
-
-    context.fillStyle = "skyblue"
+    
+    context.fillStyle = "#7cfbff"
     for (let i = 0; i < blockArray.length; i++) {
         let block = blockArray[i]
         if (!block.break) {
@@ -111,7 +112,7 @@ function update() {
             context.fillRect(block.x, block.y, block.width, block.height)
         }
     }
-
+    
     if (blockCount == 0) {
         score += 100 * blockRows * blockColumns
         blockRows = Math.min(blockRows + 1, blockMaxRows)
@@ -130,7 +131,7 @@ function movePlayer(e) {
     if (gameOver) {
         if (e.code == "Space") {
             resetGame()
-            console.log("RESET")
+            // console.log("RESET")
         }
         return
     }

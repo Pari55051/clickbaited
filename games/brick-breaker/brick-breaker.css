@@ -2,13 +2,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 97.5vh;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
     text-align: center;
+    background: url(bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
 #board {
-    background-color: black;
-    border-top: 5px solid skyblue;
-    border-left: 5px solid skyblue;
-    border-right: 5px solid skyblue;
+    background-color: #000;
+    border: 5px solid #7cfbff;
+}
+
+#start-text {
+    font: 20px sans-serif;
+    color: #fff;
+    background: none;
+    margin: 0;
+    margin-top: 10px;
 }
