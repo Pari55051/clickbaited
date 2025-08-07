@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-:root{
+:root {
     --hue: 237;
     --saturation: 65%;
     --lightness: 35%;
-    /* To check the color */
-    /* --identity-primary: hsl(237, 65%, 35%); */
 }
 
 * {
@@ -170,6 +168,27 @@ body {
 
 .game-modal .content button {
     padding: 12px 23px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+
+.back-btn a {
+    width: 100%;
+    height: 100%;
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 782px) {
