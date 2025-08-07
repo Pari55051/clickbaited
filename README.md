@@ -14,7 +14,7 @@ View the Project Here: [https://pari55051.github.io/clickbaited/](https://pari55
 - "Don't" click on the red button or else [redacted] will [censored] for the rest of you life!!
 
 ## Images
-![preview][./preview.png]
+![preview](./preview.png)
 
 ## Things I Learnt:
 - you should use Github, or your projects can be lost in the abyss forever
