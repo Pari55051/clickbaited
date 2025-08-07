@@ -2,7 +2,7 @@
 a classic red button project with a small twist
 
 ## Live Demo
-View the Project Here: [https://pari55051.github.io/clickbaited/](https://pari55051.github.io/clickbaited/)
+View the Project Here: [https://pari55051.github.io/clickbaited/](https://pari55051.github.io/clickbaited/#)
 
 ## Overview
 
