@@ -7,11 +7,11 @@ View the Project Here: [https://pari55051.github.io/clickbaited/](https://pari55
 ## Overview
 
 ### Directions
-> "don't" click on the red button!!
+> "Don't" click on the red button!!
 
 ### Features
 - a clickable red button
-- "don't" click on the red button or else [redacted] will [censored] for the rest of you life!!
+- "Don't" click on the red button or else [redacted] will [censored] for the rest of you life!!
 
 ## Images
 ![preview][./preview.png]
