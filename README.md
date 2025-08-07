@@ -29,3 +29,5 @@ View the Project Here: [https://pari55051.github.io/clickbaited/](https://pari55
 - made by: [unowen](https://github.com/pari55051)
 - icons: [Phosphoricons](https://phosphoricons.com/)
 - red button design from: [here](https://www.youtube.com/shorts/Dc4pIT4I7a0?feature=share)
+
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
